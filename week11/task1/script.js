@@ -15,6 +15,7 @@ function addTask() {
     newItem.addEventListener ('click', function () {
       this.classList.toggle('done');
     });
+    task.value = '';
   }
 };
 
