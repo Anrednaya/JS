@@ -15,8 +15,9 @@ li {
   align-items: center;
 }
 
-li span{
+li span {
   font-size: 15px;
+  text-decoration: none !important;
 }
 
 ul {
@@ -68,4 +69,8 @@ input {
 
 .done {
   text-decoration: line-through;
+}
+
+.del {
+  text-decoration: none;
 }

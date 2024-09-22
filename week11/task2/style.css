@@ -1,0 +1,45 @@
+h2 {
+  font-size: 50px;
+  align-content: center;
+}
+
+.image {
+  width: 200px;
+}
+
+img {
+  width: 100%;  
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-left: 10%;
+  border: solid 1px black;
+  margin: 10px;
+}
+
+.itemDescription {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 30px;
+  color: blue;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+#sum, .cost {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.crossedOut {
+  text-decoration: line-through;
+}
