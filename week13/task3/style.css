@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-left: 50px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+#comment {
+  width: 500px;
+  height: 150px;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.inputArea {
+  margin-right: 20px;
+
+}
+
+#commentArea {
+  border: 1px solid black;
+  width: 60%;
+  padding: 15px;
+}
+
+#createdComment {
+  width: 100%;
+  border: 1px solid rgb(110, 103, 103);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+#commentDate {
+  font-size: 15px;
+  padding-right: 15px;
+}

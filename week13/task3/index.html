@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href='./style.css'>
+	<title>Document</title>
+</head>
+
+<body>
+	<h2>Сервис комментариев</h2>
+	<div class="wrapper">
+		<div class="inputArea">
+			<h3>Оставьте комментарий</h3>
+			<label>
+				<input type="checkbox" id="anonymus">
+				Отправить анонимно
+			</label>
+			<p>Введите ваше имя</p>
+			<input type="text" name="username" id="username" />
+			<p>Введите ссылку на ваш аватар</p>
+			<input type="text" name="avatarLink" id="avatarLink" />
+			<p>Текст комментария</p>
+			<input type="text" name="comment" id="text" />
+			<div><button id="send">Отправить</button></div>
+		</div>
+		<div id="commentArea">
+			<h3>Комментарии:</h3>
+		</div>
+	</div>
+
+	<script src="./script.js"></script>
+</body>
+
+</html>
