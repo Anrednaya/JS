@@ -1,21 +1,24 @@
 const calculateDaysUntilBirthday = () => {
   const birthDate = new Date(document.getElementById('birthDate').value);
+  birthDate.setHours(0, 0, 0, 0);
   if (document.getElementById('birthDate').value != '') {
     document.getElementById('result').style.color = 'inherit';
     const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
     let result;
     birthDate.setFullYear(currentDate.getFullYear());
     if (birthDate > currentDate) {
-      result = Math.floor((birthDate - currentDate) / (1000 * 60 * 60 * 24));
-    } else {
+      result = Math.ceil((birthDate - currentDate) / (1000 * 60 * 60 * 24));
+    } else if (birthDate < currentDate) {
       birthDate.setFullYear(currentDate.getFullYear() + 1);
-      result = Math.floor((birthDate - currentDate) / (1000 * 60 * 60 * 24));
+      result = Math.ceil((birthDate - currentDate) / (1000 * 60 * 60 * 24));
+    } else if (birthDate - currentDate === 0) {
+      result = 0;
     }
     if (result === 0) {
       document.getElementById('result').textContent = 'Ваш день Рождения сегодня! Наилучшие пожелания!';
     } else {
       let lastNum = result % 10;
-      console.log(result);
       if ((lastNum >= 5 && lastNum <= 9) || (lastNum == 0)) {
         document.getElementById('result').textContent = `До вашего дня Рождения осталось ${result} дней!`;
       } else if (lastNum >= 2 && lastNum <= 4) {
@@ -30,5 +33,5 @@ const calculateDaysUntilBirthday = () => {
   }
 }
 
-  const button = document.getElementById('calculateDaysUntilBirthday');
-  button.onclick = calculateDaysUntilBirthday;
+const button = document.getElementById('calculateDaysUntilBirthday');
+button.onclick = calculateDaysUntilBirthday;
