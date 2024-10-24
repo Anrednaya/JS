@@ -5,6 +5,7 @@ const calculateDaysUntilBirthday = () => {
     document.getElementById('result').style.color = 'inherit';
     const currentDate = new Date();
     currentDate.setHours(0, 0, 0, 0);
+    console.log(currentDate);
     let result;
     birthDate.setFullYear(currentDate.getFullYear());
     if (birthDate > currentDate) {

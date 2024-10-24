@@ -1,6 +1,7 @@
 .wrapper {
   width: 50%;
   margin: 0 auto;
+  padding: 10px;
   background-color: #fbe8e8;
   display: flex;
   flex-direction: column;
@@ -11,11 +12,20 @@
   overflow: hidden;
 }
 
+@media (max-width: 1000px) {
+  .wrapper {
+    width: 90%;
+  }
+  h1 {
+    font-size: 20px;
+  }
+}
+
 button {
   display: block;
-  font-size: 1em;
-  width: 20%;
-  height: 5vh;
+  font-size: 12px;
+  width: 100px;
+  height: 35px;
   margin-top: 20px;
   border-color: #8e7676;
   background-color: #f6eaea;
@@ -23,6 +33,10 @@ button {
   color: #8e7676;
   box-shadow: 0px 0px 5px 2px #7e5c5c6c;
   border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
 }
 
 img {
