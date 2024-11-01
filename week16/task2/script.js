@@ -179,16 +179,18 @@ select.addEventListener('change', professionCheck);
 //проверка пароля
 const password = form.elements.passwordInput;
 const passwordChecking = () => {
-  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[0-9])[A-Za-z]{8,20}$/;
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[0-9])[A-Za-z0-9]{8,20}$/;
   const error = form.querySelector('#passwordError');
   if (regex.test(password.value)) {
-    error.style.display = 'block';
-    error.textContent = 'введите корректный пароль';
-    password.style.border = 'solid 1px red';
-  } else {
     error.textContent = '';
     error.style.display = 'none';
     password.style.border = '';
+  } else {
+    error.style.display = 'block';
+    error.textContent = 'введите корректный пароль';
+    password.style.border = 'solid 1px red';
+    console.log(password.value)
+    password.addEventListener('input', passwordChecking);
   }
 }
 const passwordCheck = () => {
