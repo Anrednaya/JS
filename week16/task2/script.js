@@ -1,18 +1,29 @@
 const submitButton = document.querySelector('#submitButton');
 submitButton.disabled = true;
+const form = document.forms.form;
+
+form.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  console.log(`
+    имя: ${namee.value};
+    email: ${email.value};
+    возраст: ${age.value};
+    пол: ${gender.value};
+    профессия: ${profession.value};
+    пароль: ${password.value};
+    согласие на обработку персональных данных: получено;
+    `)
+})
+
 
 // проверка валидности всех полей для разблокировки кнопки
 function fieldsChecking() {
   if (nameCheck() && emailCheck() && ageCheck() && genderChecking() && professionCheck() && agreementCheck() && passwordCheck()) {
-    console.log(true);
     submitButton.disabled = false;
   } else {
-    console.log(false);
     submitButton.disabled = true;
   }
 }
-
-const form = document.forms.form;
 
 
 //проверка корректности введенного имени для отображения ошибки
@@ -114,13 +125,19 @@ age.addEventListener('input', fieldsChecking);
 //проверка отметки гендера
 const male = form.querySelector('#male');
 const female = form.querySelector('#female');
+let gender;
 const genderChecking = () => {
-  if (!male.checked && !female.checked) {
-    return false;
-  } else {
+  if (male.checked) {
+    gender = male;
     return true;
+  } else if (female.checked) {
+    gender = female;
+    return true;
+  } else {
+    return false;
   }
 }
+
 male.addEventListener('change', fieldsChecking);
 male.addEventListener('change', genderChecking);
 female.addEventListener('change', fieldsChecking);
@@ -128,6 +145,7 @@ female.addEventListener('change', genderChecking);
 
 //проверка выбора профессии
 const select = form.elements.professionSelect;
+let profession;
 const professionChecking = () => {
   const selectedIndex = select.selectedIndex;
   const error = form.querySelector('#professionError');
@@ -139,6 +157,7 @@ const professionChecking = () => {
     error.textContent = '';
     error.style.display = 'none';
     select.style.border = '';
+    profession = select;
   }
 }
 const professionCheck = () => {
