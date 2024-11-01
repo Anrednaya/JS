@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Форма регистрации</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Форма регистрации</h1>
+    <form name="form">
+      <label for="nameInput">Имя: </label>
+      <input type="text" name="nameInput" id="nameInput" placeholder="введите имя" required>
+      <p id="nameHint">может содержать только латинские буквы и пробелы, длина от 2 до 20 символов</p>
+      <p class="error" id="nameError"></p>
+      <br>
+      <label for="nameInput">Почта: </label>
+      <input type="email" name="emailInput" id="emailInput" placeholder="введите email" required>
+      <p class="error" id="emailError"></p> 
+      <br>
+      <label for="ageInput">Возраст:</label>
+      <input type="number" name="ageInput" id="ageInput" placeholder="введите возраст" required>
+      <p class="error" id="ageError"></p>
+      <br>
+      <fieldset id="gender-fieldset">
+        <legend>Выберите пол:</legend>
+        <input type="radio" name="gender" id="female" class="radio" value="female">
+        <label for="female" class="radio-label">женский</label>
+        <input type="radio" name="gender" id="male" class="radio" value="male">
+        <label for="male" class="radio-label">мужской</label>
+      </fieldset>
+      <p class="error" id="genderError"></p>
+      <label for="professionSelect">Профессия:</label>
+      <select name="professionSelect" id="professionSelect">
+        <option value="" disabled selected>Выберите профессию</option>
+        <option value="Врач">Врач</option>
+        <option value="Программист">Программист</option>
+        <option value="Продавец">Продавец</option>
+        <option value="Инженер">Инженер</option>
+        <option value="Учитель">Учитель</option>
+        <option value="Дизайнер">Дизайнер</option>
+        <option value="Другое">Другое</option>
+      </select>
+      <p class="error" id="professionError"></p>
+      <br>
+      <label for="passwordInput">Пароль: </label>
+      <input type="text" name="passwordInput" id="passwordInput"  minlength="8" placeholder="введите пароль" required>
+      <p id="passwordHint">Пароль должен содержать не менее 8 символов, содержать как минимум одну заглавную букву, одну строчную букву и одну цифру</p>
+      <p class="error" id="passwordError"></p>
+      <label for="agreementCheckbox" id="agreementCheckbox-label">Согласие на обработку персональных данных:</label>
+      <input type="checkbox" name="agreementCheckbox" id="agreementCheckbox" required>
+      <p class="error" id="agreementError"></p>
+      <br>
+      <button type="submit" name="submitButton" id="submitButton">Отправить</button>
+    </form>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
